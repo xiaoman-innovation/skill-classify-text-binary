@@ -8,6 +8,48 @@ A Claude Code skill for end-to-end binary text classifier training and deploymen
 
 ---
 
+## Installation / 安装
+
+### Claude Code
+
+```bash
+# User-level / 用户级
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  ~/.claude/skills/
+
+# Project-level / 项目级
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  .claude/skills/
+```
+
+Invoke / 调用: `/text-binary-classification` or describe your task in natural language / 或用自然语言描述任务.
+
+### Codex CLI (OpenAI)
+
+```bash
+# Personal / 个人
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  ~/.codex/skills/
+
+# Project-shared / 项目共享
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  .codex/skills/
+```
+
+Invoke / 调用: `$text-binary-classification` or let Codex auto-detect / 或让 Codex 自动匹配.
+
+### Trae (ByteDance)
+
+```bash
+# Project-level / 项目级
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  .trae/skills/
+```
+
+Or import via Trae UI / 或通过界面导入: **Settings → Skills → Import from URL**.
+
+---
+
 ## Model Coverage / 模型覆盖
 
 | Category / 类别 | Models / 模型 | Embeddings / 嵌入 |
