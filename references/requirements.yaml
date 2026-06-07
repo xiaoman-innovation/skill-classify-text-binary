@@ -1,0 +1,49 @@
+# Python environment requirements for text-binary-classification
+# Used by step1_analyze.py to verify the execution environment
+
+packages:
+  # Core data processing
+  numpy:
+  pandas:
+  scipy:
+  scikit-learn:
+
+  # NLP preprocessing
+  nltk:
+
+  # Serialization
+  joblib:
+
+  # Progress bars
+  tqdm:
+
+  # System monitoring
+  psutil:
+
+  # Deep learning
+  torch:
+  transformers:
+  tokenizers:
+
+  # PEFT (parameter-efficient fine-tuning, e.g. LoRA)
+  peft:
+
+  # Hyperparameter optimization
+  optuna:
+
+  # Experiment tracking
+  mlflow:
+
+  # Language detection (optional)
+  langdetect:
+
+  # Web API deployment
+  fastapi:
+  uvicorn:
+  pydantic:
+
+  # YAML parsing for environment check
+  pyyaml:
+
+  # Version comparison
+  packaging:

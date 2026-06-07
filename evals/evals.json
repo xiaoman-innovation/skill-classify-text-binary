@@ -1,0 +1,40 @@
+{
+  "skill_name": "text-binary-classification",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to train a binary text classifier on data.csv. The text is in the 'review' column and the label (0 or 1) is in the 'sentiment' column.",
+      "expected_output": "Skill triggers, reads the CSV, performs Stage 1 data analysis, reports class distribution and text statistics, then proceeds to Stage 2 model scheme.",
+      "files": ["evals/files/sample_reviews.csv"],
+      "expectations": [
+        "The skill correctly identifies text_col='review' and label_col='sentiment'",
+        "Stage 1 data analysis is executed and stats are reported to the user",
+        "Stage 2 model scheme is generated and presented with priorities"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Help me train a spam classifier. Text is in the message column, label is in is_spam column (0=not spam, 1=spam). Data is at spam_data.csv. I want to try both traditional ML and deep learning.",
+      "expected_output": "Skill triggers, confirms column names, proceeds through all 4 stages. In Stage 2, includes both traditional ML and deep learning models. Stage 3 trains models from both categories.",
+      "files": ["evals/files/spam_data.csv"],
+      "expectations": [
+        "Skill correctly identifies this as a binary text classification task",
+        "Stage 2 scheme includes both traditional ML and deep learning models",
+        "Stage 3 trains or attempts training of both model categories",
+        "GPU is auto-detected and used if available"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Build a sentiment classifier that determines if product reviews are positive or negative. Use deep learning with GloVe embeddings and also try BERT. I have product_reviews.csv with text in 'review_text' and label in 'rating' (0=negative, 1=positive).",
+      "expected_output": "Skill triggers, guides user through the pipeline. Stage 2 includes deep learning (CNN/LSTM/GRU) and BERT variants. Training results include both model categories. Final output has deployment artifacts.",
+      "files": ["evals/files/product_reviews.csv"],
+      "expectations": [
+        "Stage 2 scheme includes deep learning models with GloVe embeddings",
+        "Stage 2 scheme includes transformer models (BERT variants)",
+        "Stage 3 trains both model categories",
+        "Stage 4 generates deployment artifacts"
+      ]
+    }
+  ]
+}
