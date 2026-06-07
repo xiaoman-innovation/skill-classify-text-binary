@@ -225,18 +225,18 @@ $env:PYTHONIOENCODING="utf-8"
 
 **问题 / Problem**: Git Bash auto-translates `/c/Users/...` → `C:\Users\...` for shell commands, but Python's `open()` / `pd.read_csv()` bypass the shell and see the literal Unix path, which does not exist on Windows.
 
-- `head -3 /c/Users/zhenp/Desktop/file.csv` → **Bash OK** (shell translates)
-- `pd.read_csv('/c/Users/zhenp/Desktop/file.csv')` → **Python FileNotFoundError**
+- `head -3 /c/Users/YourUsername/Desktop/file.csv` → **Bash OK** (shell translates)
+- `pd.read_csv('/c/Users/YourUsername/Desktop/file.csv')` → **Python FileNotFoundError**
 
 **规则 / Rule**: In Windows, pass **Windows-native paths** to Python scripts:
 
 ```
 # Correct ✓ — Windows native paths
-python script.py --csv "C:\Users\zhenp\Desktop\file.csv"
-python script.py --csv "C:/Users/zhenp/Desktop/file.csv"
+python script.py --csv "C:\Users\YourUsername\Desktop\file.csv"
+python script.py --csv "C:/Users/YourUsername/Desktop/file.csv"
 
 # Wrong ✗ — Unix-style paths (Python cannot resolve)
-python script.py --csv "/c/Users/zhenp/Desktop/file.csv"
+python script.py --csv "/c/Users/YourUsername/Desktop/file.csv"
 ```
 
 **AI self-check before every Python call:**
