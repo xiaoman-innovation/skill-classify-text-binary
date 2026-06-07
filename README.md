@@ -1,20 +1,20 @@
-# English Text Binary Classification Skill
+# Text Binary Classification Skill
 
-> 英文文本二分类 — 端到端训练与部署
+> 文本二分类技能 — 端到端训练与部署
 
-A Claude Code skill for end-to-end binary text classifier training and deployment. Covers **150+ model variants** across traditional machine learning, deep learning, and Transformer architectures — with Optuna hyperparameter tuning, MLflow experiment tracking, and one-click API deployment.
+A Claude Code skill for end-to-end multilingual text binary classifier training and deployment. Covers **150+ model variants** across traditional machine learning, deep learning, and Transformer architectures — with Optuna hyperparameter tuning, MLflow experiment tracking, and one-click API deployment.
 
-一个 Claude Code 技能，用于端到端的英文文本二分类模型训练和部署。覆盖 **150+ 种模型变体**，涵盖传统机器学习、深度学习和 Transformer 架构，支持 Optuna 超参数调优、MLflow 实验追踪和一键 API 部署。
+一个 Claude Code 技能，用于端到端的多语言文本二分类模型训练和部署。覆盖 **150+ 种模型变体**，涵盖传统机器学习、深度学习和 Transformer 架构，支持 Optuna 超参数调优、MLflow 实验追踪和一键 API 部署。
 
 ---
 
 ## Model Coverage / 模型覆盖
 
-| Category / 类别 | Models / 模型 | Embeddings / 嵌入 |
-|---|---|---|
-| **Traditional ML** 传统机器学习 | SVM (Linear/RBF), Logistic Regression, Random Forest, Multinomial NB | BoW, TF-IDF, GloVe, Word2Vec, fastText |
-| **Deep Learning** 深度学习 | CNN, LSTM, BiLSTM, GRU, BiGRU + Attention variants | GloVe, fastText (frozen / fine-tuned) |
-| **Transformers** | BERT, RoBERTa, DeBERTa, DistilBERT, ALBERT, ELECTRA, XLNet | Feature extraction, partial freeze, LoRA, full fine-tuning |
+| Category / 类别 | Representative Models / 代表模型 |
+|---|---|
+| **Traditional ML** 传统机器学习 | SVM, Logistic Regression, Random Forest, Multinomial NB 等 |
+| **Deep Learning** 深度学习 | LSTM, BiLSTM, GRU, BiGRU, CNN + Attention 等 |
+| **Transformers** | BERT, RoBERTa, DeBERTa, DistilBERT, XLNet 等（支持多语言模型如 XLM-RoBERTa、mBERT） |
 
 Each model supports **baseline** (default hyperparameters) and **tuned** (Optuna-optimized) training modes.
 
@@ -35,7 +35,7 @@ step1_analyze.py  →  step2_split.py  →  step3_scheme.py  →  step4_train.py
 | 2 | `step2_split.py` | Train/val/test split with stratification / 分层训练/验证/测试集划分 |
 | 3 | `step3_scheme.py` | Model scheme generation with 150+ candidates / 生成 150+ 候选模型方案 |
 | 4 | `step4_train.py` | Training with Optuna hyperparameter tuning + MLflow tracking / 训练 + Optuna 超参优化 + MLflow 追踪 |
-| 5 | `step5_save.py` | Save best model, generate FastAPI/Flask deployment artifacts / 保存最佳模型，生成 API 部署文件 |
+| 5 | `step5_save.py` | Save best model, generate API deployment artifacts / 保存最佳模型，生成 API 部署文件 |
 
 ---
 
@@ -47,18 +47,6 @@ step1_analyze.py  →  step2_split.py  →  step3_scheme.py  →  step4_train.py
 - **Robust CSV Handling** / 健壮的 CSV 处理 — Auto-detects encoding from 8 codecs
 - **Class Imbalance Handling** / 类别不平衡处理 — Class weights, stratified splits
 - **One-click Deployment** / 一键部署 — FastAPI/Flask server, Dockerfile, requirements.txt
-
----
-
-## Dependencies / 依赖
-
-```
-numpy, pandas, scipy, scikit-learn, nltk, joblib, tqdm, psutil
-torch, transformers, tokenizers, peft
-optuna, mlflow
-fastapi, uvicorn, pydantic
-pyyaml, packaging, langdetect
-```
 
 ---
 
@@ -121,8 +109,16 @@ uvicorn api_server:app --host 0.0.0.0 --port 8000
 # Test inference / 测试推理
 curl -X POST http://localhost:8000/predict \
   -H "Content-Type: application/json" \
-  -d '{"text": "This product is amazing!"}'
+  -d '{"text": "Hello world!"}'
 ```
+
+---
+
+## Language-specific Skills / 各语言技能
+
+| Language / 语言 | Directory / 目录 |
+|---|---|
+| English 英文 | [`classify-text-binary-en/`](./classify-text-binary-en/) |
 
 ---
 
