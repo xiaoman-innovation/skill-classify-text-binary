@@ -6,6 +6,50 @@
 
 ---
 
+## 安装方式
+
+本技能遵循 **Agent Skills** 开放标准，适用于多种 AI 编程工具。
+
+### Claude Code
+
+```bash
+# 用户级安装（所有项目可用）
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  ~/.claude/skills/classify-text-binary-en/
+
+# 项目级安装（团队共享）
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  .claude/skills/classify-text-binary-en/
+```
+
+调用方式：输入 `/text-binary-classification`，或直接用自然语言描述任务（如"帮我用这个 CSV 训练一个情感分类器"）。
+
+### Codex CLI (OpenAI)
+
+```bash
+# 个人安装
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  ~/.codex/skills/classify-text-binary-en/
+
+# 项目共享安装
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  .codex/skills/classify-text-binary-en/
+```
+
+调用方式：输入 `$text-binary-classification`，或让 Codex 根据任务自动匹配。
+
+### Trae（字节跳动）
+
+```bash
+# 项目级安装
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  .trae/skills/classify-text-binary-en/
+```
+
+也可通过 Trae 界面导入：**设置 → Skills → 从 URL 导入** → 粘贴仓库地址。
+
+---
+
 ## 模型覆盖
 
 | 类别 | 代表模型 |
@@ -119,14 +163,6 @@ curl -X POST http://localhost:8000/predict \
   -H "Content-Type: application/json" \
   -d '{"text": "这个产品太棒了！"}'
 ```
-
----
-
-## 各语言技能
-
-| 语言 | 目录 |
-|---|---|
-| English 英文 | [`classify-text-binary-en/`](./classify-text-binary-en/) |
 
 ---
 

@@ -6,6 +6,50 @@ A Claude Code skill for end-to-end multilingual text binary classifier training 
 
 ---
 
+## Installation
+
+This skill follows the **Agent Skills** open standard and works across multiple AI coding tools.
+
+### Claude Code
+
+```bash
+# User-level (available across all projects)
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  ~/.claude/skills/classify-text-binary-en/
+
+# Project-level (shared with your team)
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  .claude/skills/classify-text-binary-en/
+```
+
+Then invoke with: `/text-binary-classification` or describe your task in natural language (e.g. "train a sentiment classifier on my CSV").
+
+### Codex CLI (OpenAI)
+
+```bash
+# Personal
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  ~/.codex/skills/classify-text-binary-en/
+
+# Project-shared
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  .codex/skills/classify-text-binary-en/
+```
+
+Then invoke with: `$text-binary-classification` or let Codex auto-detect based on your task.
+
+### Trae (ByteDance)
+
+```bash
+# Project-level
+git clone https://github.com/xiaoman-innovation/skill-classify-text-binary.git \
+  .trae/skills/classify-text-binary-en/
+```
+
+Or import via Trae UI: **Settings → Skills → Import from URL** → paste the repo URL.
+
+---
+
 ## Model Coverage
 
 | Category | Representative Models |
@@ -119,14 +163,6 @@ curl -X POST http://localhost:8000/predict \
   -H "Content-Type: application/json" \
   -d '{"text": "Hello world!"}'
 ```
-
----
-
-## Language-specific Skills
-
-| Language | Directory |
-|---|---|
-| English | [`classify-text-binary-en/`](./classify-text-binary-en/) |
 
 ---
 
