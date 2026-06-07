@@ -1,0 +1,23 @@
+# Generated model outputs (15GB+)
+output/
+
+# MLflow databases
+*.db
+
+# MLflow artifacts in scripts
+scripts/output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
