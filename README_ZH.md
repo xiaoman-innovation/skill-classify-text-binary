@@ -1,6 +1,6 @@
 # 文本二分类技能
 
-[**English**](./README_EN.md) &nbsp;|&nbsp; [**中文**](./README_ZH.md)
+[**English**](./README.md)
 
 一个 Claude Code 技能，用于端到端的多语言文本二分类模型训练和部署。覆盖 **150+ 种模型变体**，涵盖传统机器学习、深度学习和 Transformer 架构，支持 Optuna 超参数调优、MLflow 实验追踪和一键 API 部署。
 
